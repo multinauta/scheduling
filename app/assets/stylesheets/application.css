@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .custom-login-card {
+
+  width: 30rem;
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+  margin-top: 10%;
+
+
+  }
+
