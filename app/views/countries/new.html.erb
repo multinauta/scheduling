@@ -1,0 +1,18 @@
+<h1>New country</h1>
+
+<%= form_with(model: @country, class: "row g-3") do |form| %>
+  <div class="col-auto">
+    <%= form.label "País" %>
+    <%= form.text_field :name %>
+  </div>
+    <div class="col-auto">
+    <%= form.button :submit, class: "btn btn-primary mb-3" %>
+  </div>
+
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to countries", countries_path %>
+</div>
