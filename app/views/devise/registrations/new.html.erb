@@ -1,7 +1,7 @@
 
 <div class="card text-center custom-login-card shadow-lg p-3 mb-5 bg-white rounded">
   <div class="card-title">
-    <h3>Sign up</h3>
+    <h3><%= t("devise.log_in") %></h3>
   </div>
   <div class="card-body" id="login-form">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -13,9 +13,9 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label t("devise.password") %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> <%= t("devise.characters_minimum") %>)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
@@ -27,7 +27,7 @@
 
   <div class="actions">
     <br>
-    <%= f.submit "Sign up", class: "btn btn-primary" %>
+    <%= f.submit t("devise.sign_up"), class: "btn btn-primary" %>
   </div>
 <% end %>
   </div>

@@ -1,15 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Countries</h1>
+<h1><%= t("countries.name") %></h1>
 
 <div id="countries">
   <% @countries.each do |country| %>
     <%= render country %>
    
     <p>
-      <%= link_to "Show this country", country %>
+      <%= link_to t("countries.show_this_country"), country %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New country", new_country_path %>
+<%= link_to t("countries.new_country"), new_country_path %>

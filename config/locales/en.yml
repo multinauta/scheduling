@@ -31,3 +31,15 @@
 
 en:
   hello: "Hello world"
+  countries:
+    name: "Countries"
+    new_country: "New country"
+    show_this_country: "Show this country"
+  devise:
+    log_in: "Log in"
+    password: "Password"
+    remember_me: "Remember me"
+    sign_up: "Sign up"
+    forgot_your_password: "Forgot your password?"
+    characters_minimum: "characters minimum"
+    send_me_reset_password_instructions: "Send me reset password instructions"
