@@ -1,0 +1,14 @@
+es:
+  hello: "Hola mundo"
+  countries:
+    name: "Países"
+    new_country: "Nuevo país"
+    show_this_country: "Mostrar este país"
+  devise:
+    log_in: "Iniciar sesión"
+    password: "Contraseña"
+    remember_me: "Recuerdame"
+    sign_up: "Registrarse"
+    forgot_your_password: "¿Olvidó su contraseña?"
+    characters_minimum: "caracteres mínimos"
+    send_me_reset_password_instructions: "Envíame instrucciones para restablecer la contraseña"
