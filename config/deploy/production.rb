@@ -64,6 +64,9 @@ set :user, "deploy"
 set :puma_threads, [8, 8]
 set :puma_workers, 2
 
+# Update folder
+set :deploy_to, "/home/deploy/www/scheduling"
+
 set :pty, true
 set :use_sudo, false
 set :assets_roles, []
