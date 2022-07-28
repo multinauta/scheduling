@@ -1,0 +1,15 @@
+  <p>
+    <strong>Name:</strong>
+    <input type="text" name="<%= dom_id @state %>[name]" value="<%= @state.name %>" />
+  </p>
+  <p>
+    <strong>Country:</strong>
+    <select name="country_id"  class="form-select">
+      <%= @state.countries.each do |countrie| %>
+        <option value="<%= countrie.id %>"><%= countrie.name %></option>
+      <% end %>
+    </select>
+  </p>
+
+
+   <%= render partial: @state %>

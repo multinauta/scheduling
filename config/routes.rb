@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :places
+  resources :cities
+  resources :states
   resources :countries
   root to: 'home#index'
   get 'home/index'
