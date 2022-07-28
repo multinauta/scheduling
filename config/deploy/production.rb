@@ -59,3 +59,25 @@ server "104.248.116.231", user: "deploy", roles: %w{app db web}, my_property: :m
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+set :stage, :production
+set :user, "deploy"
+set :puma_threads, [8, 8]
+set :puma_workers, 2
+
+set :pty, true
+set :use_sudo, false
+set :assets_roles, []
+set :branch, "master"
+set :tmp_dir, "/home/deploy/tmp"
+set :deploy_via, :remote_cache
+set :bundle_gemfile, "Gemfile"
+set :rvm_ruby_string, "3.1.1"
+set :puma_bind, "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
+set :puma_state, "#{shared_path}/tmp/pids/puma.state"
+set :puma_pid, "#{shared_path}/tmp/pids/puma.pid"
+set :puma_access_log, "#{release_path}/log/puma.error.log"
+set :puma_error_log, "#{release_path}/log/puma.access.log"
+set :puma_preload_app, true
+set :puma_worker_timeout, nil
+set :puma_init_active_record, true
+set :bundle_without, %w{test}.join(" ")
