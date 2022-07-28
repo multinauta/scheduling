@@ -16,6 +16,7 @@ require "capistrano/scm/git"
 install_plugin Capistrano::SCM::Git
 install_plugin Capistrano::Puma
 install_plugin Capistrano::Puma::Systemd
+install_plugin Capistrano::Puma::Nginx  # if you want to upload a nginx site template
 
 # Include tasks from other gems included in your Gemfile
 #
