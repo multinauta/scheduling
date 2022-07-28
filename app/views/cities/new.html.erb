@@ -1,0 +1,23 @@
+<div class="card" style="width: 48rem;">
+  <h1>New City</h1>
+  <div class="card-body">
+    <%= form_with(model: @city, class: "mb-3") do |form| %>
+      <div class="mb-3">
+        <%= form.label "Ciudad", :class => "form-label" %>
+        <%= form.text_field :name, :class => "form-control" %>
+      </div>
+      <div class="mb-3">
+        <%= form.label "Estado", :class => "form-label" %>
+        <%= form.select :state_id, @city.states_select_options, {}, { :class => 'form-select' } %>
+      </div>
+      <div class="mb-3">
+        <%= form.button :submit, class: "btn btn-primary mb-3" %>
+      </div>
+    <% end %>
+    <br>
+
+
+
+<div>
+  <%= link_to "Back to cities", cities_path %>
+</div>
