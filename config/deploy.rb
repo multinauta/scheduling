@@ -46,7 +46,7 @@ set :keep_releases, 5
 set :migration_role, :app
 
 
-append :linked_dirs, "log", "tmp"
+append :linked_dirs, "log", "tmp", "pids", "sockets"
 
 set :puma_pid, "#{shared_path}/tmp/pids/puma.pid"
 set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock"
