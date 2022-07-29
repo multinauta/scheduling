@@ -3,6 +3,10 @@ lock '~> 3.17.0'
 
 set :application, 'scheduling'
 set :repo_url, 'git@github.com:multinauta/scheduling.git'
+set :rake, 'bundle exec rake'
+set :console_user, nil
+set :console_role, :app
+set :keep_releases, 5
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -12,7 +16,8 @@ set :repo_url, 'git@github.com:multinauta/scheduling.git'
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
-
+set :format, :airbrussh
+set :pty, true
 # You can configure the Airbrussh format using :format_options.
 # These are the defaults.
 # set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
