@@ -71,6 +71,8 @@ namespace :puma do
         invoke 'puma:restart'
       end
     end
-  
+
+    before :start, :make_dirs
+    after :start, :restart
     after :finishing, :cleanup
   end
