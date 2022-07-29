@@ -67,6 +67,7 @@ set :puma_workers, 2
 # Update folder
 set :deploy_to, "/home/deploy/www/scheduling"
 set :nginx_server_name , "scheduling.alvaro-tapia.cl"
+set :puma_preload_app, true
 
 set :pty, true
 set :use_sudo, false
