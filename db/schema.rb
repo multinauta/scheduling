@@ -11,11 +11,14 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_07_08_145730) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "state_id", null: false
+    t.bigint "state_id", null: false
     t.index ["state_id"], name: "index_cities_on_state_id"
   end
 
@@ -29,7 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_08_145730) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "city_id", null: false
+    t.bigint "city_id", null: false
     t.index ["city_id"], name: "index_places_on_city_id"
   end
 
@@ -44,8 +47,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_08_145730) do
     t.boolean "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "sub_place_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "sub_place_id", null: false
+    t.bigint "user_id", null: false
     t.index ["sub_place_id"], name: "index_schedules_on_sub_place_id"
     t.index ["user_id"], name: "index_schedules_on_user_id"
   end
@@ -54,7 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_08_145730) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "country_id", null: false
+    t.bigint "country_id", null: false
     t.index ["country_id"], name: "index_states_on_country_id"
   end
 
@@ -62,7 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_08_145730) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "place_id", null: false
+    t.bigint "place_id", null: false
     t.index ["place_id"], name: "index_sub_places_on_place_id"
   end
 
@@ -74,7 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_08_145730) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "rol_id", default: 1, null: false
+    t.bigint "rol_id", default: 1, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["rol_id"], name: "index_users_on_rol_id"

@@ -50,6 +50,7 @@ gem "bootsnap", require: false
 
 # authentication
 gem "devise", "~> 4.8", ">= 4.8.1"
+gem 'pg', '~> 1.4', '>= 1.4.2'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
