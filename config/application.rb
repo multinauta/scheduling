@@ -11,7 +11,7 @@ module Scheduling
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
     config.i18n.available_locales = %i[en es]
-    config.secret_key_base = ENV["SECRET_KEY_BASE"] 
+    config.secret_key_base = 'ABCXD' 
 
     # Configuration for the application, engines, and railties goes here.
     #
