@@ -28,7 +28,6 @@ set :ssh_options, { user: 'deploy', forward_agent: true, auth_methods: %w[public
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true # Change to false when not using ActiveRecord
-set :assets_roles, [:web, :app] 
 
 ## Defaults:
 # set :scm,           :git
