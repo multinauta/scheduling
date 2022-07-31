@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sub_places
   resources :places
   resources :cities
   resources :states
