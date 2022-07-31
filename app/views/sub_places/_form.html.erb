@@ -1,0 +1,22 @@
+<%= form_with(model: sub_place) do |form| %>
+  <% if sub_place.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(sub_place.errors.count, "error") %> prohibited this sub_place from being saved:</h2>
+
+      <ul>
+        <% sub_place.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :place_id, style: "display: block" %>
+    <%= form.text_field :place_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

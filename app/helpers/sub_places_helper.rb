@@ -1,0 +1,2 @@
+module SubPlacesHelper
+end

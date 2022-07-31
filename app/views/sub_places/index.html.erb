@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Sub places</h1>
+
+<div id="sub_places">
+  <% @sub_places.each do |sub_place| %>
+    <%= render sub_place %>
+    <p>
+      <%= link_to "Show this sub place", sub_place %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New sub place", new_sub_place_path %>

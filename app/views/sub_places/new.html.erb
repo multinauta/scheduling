@@ -1,0 +1,21 @@
+<div class="card" style="width: 48rem;">
+  <h1>New Sub Place</h1>
+  <div class="card-body">
+    <%= form_with(model: @sub_place, class: "mb-3") do |form| %>
+      <div class="mb-3">
+        <%= form.label "Habitación", :class => "form-label" %>
+        <%= form.text_field :name, :class => "form-control" %>
+      </div>
+      <div class="mb-3">
+        <%= form.label "Lugar", :class => "form-label" %>
+        <%= form.select :place_id, @sub_place.places_select_options, {}, { :class => 'form-select' } %>
+      </div>
+      <div class="mb-3">
+        <%= form.button :submit, class: "btn btn-primary mb-3" %>
+      </div>
+    <% end %>
+    <br>
+
+<div>
+  <%= link_to "Back to sub places", sub_places_path %>
+</div>
