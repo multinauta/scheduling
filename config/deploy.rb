@@ -74,6 +74,7 @@ namespace :puma do
     end
   end
 
+  after  :finishing, :compile_assets
   before :start, :create_dirs
   after :start, :nginx_restart
 end
