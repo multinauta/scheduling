@@ -1,0 +1,34 @@
+
+<div class="card" style="width: 48rem;">
+  <h1>Agendar</h1>
+  <div class="card-body">
+    <%= form_with(model: @schedule, class: "mb-3") do |form| %>
+      <div class="mb-3">
+        <%= form.label "Seleccione Región", :class => "form-label" %>
+        <%= form.select :state_id, @schedule.states_select_options , {}, { :class => 'form-select' } %>
+      </div>
+      <div class="mb-3">
+        <%= form.label "Seleccione Ciudad", :class => "form-label" %>
+        <%= form.select :city_id, @schedule.cities_select_options , {}, { :class => 'form-select' } %>
+      </div>
+      <div class="mb-3">
+        <%= form.label "Seleccione Centro", :class => "form-label" %>
+        <%= form.select :place_id, @schedule.places_select_options , {}, { :class => 'form-select' } %>
+      </div>
+      <div class="mb-3">
+        <%= form.label "Seleccione Fecha", :class => "form-label" %>
+        <input name="date" id="date" class="form-control" type="date" />
+      </div>
+      <div class="mb-3">
+        <input type="button" value="Buscar Especialista" class="btn btn-primary mb-3"/>
+      </div>
+      <div class="mb-3">
+        <%= form.button :submit, class: "btn btn-primary mb-3" %>
+      </div>
+    <% end %>
+    <br>
+
+<div>
+  <%= link_to "Back to schedules", schedules_path %>
+</div>
+

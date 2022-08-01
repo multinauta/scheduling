@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :schedules
   resources :sub_places
   resources :places
   resources :cities
@@ -11,4 +12,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  # make api to users
+  get 'usersbyplace', to: 'users#users_by_place'
 end

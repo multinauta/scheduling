@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_08_145730) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_01_045421) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,9 +47,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_08_145730) do
     t.boolean "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "sub_place_id", null: false
     t.bigint "user_id", null: false
-    t.index ["sub_place_id"], name: "index_schedules_on_sub_place_id"
+    t.integer "place_id"
     t.index ["user_id"], name: "index_schedules_on_user_id"
   end
 
@@ -78,16 +77,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_08_145730) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "rol_id", default: 1, null: false
+    t.bigint "place_id", default: 1, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["place_id"], name: "index_users_on_place_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["rol_id"], name: "index_users_on_rol_id"
   end
 
   add_foreign_key "cities", "states"
   add_foreign_key "places", "cities"
-  add_foreign_key "schedules", "sub_places"
   add_foreign_key "schedules", "users"
   add_foreign_key "states", "countries"
   add_foreign_key "sub_places", "places"
+  add_foreign_key "users", "places"
   add_foreign_key "users", "rols"
 end

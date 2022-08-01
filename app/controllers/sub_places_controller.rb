@@ -1,5 +1,5 @@
 class SubPlacesController < ApplicationController
-  before_action :set_sub_place, only: %i[ show edit update destroy ]
+  before_action :set_sub_place, only: %i[show edit update destroy]
 
   # GET /sub_places or /sub_places.json
   def index
@@ -7,8 +7,7 @@ class SubPlacesController < ApplicationController
   end
 
   # GET /sub_places/1 or /sub_places/1.json
-  def show
-  end
+  def show; end
 
   # GET /sub_places/new
   def new
@@ -16,8 +15,7 @@ class SubPlacesController < ApplicationController
   end
 
   # GET /sub_places/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /sub_places or /sub_places.json
   def create
@@ -25,7 +23,7 @@ class SubPlacesController < ApplicationController
 
     respond_to do |format|
       if @sub_place.save
-        format.html { redirect_to sub_place_url(@sub_place), notice: "Sub place was successfully created." }
+        format.html { redirect_to sub_place_url(@sub_place), notice: 'Sub place was successfully created.' }
         format.json { render :show, status: :created, location: @sub_place }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class SubPlacesController < ApplicationController
   def update
     respond_to do |format|
       if @sub_place.update(sub_place_params)
-        format.html { redirect_to sub_place_url(@sub_place), notice: "Sub place was successfully updated." }
+        format.html { redirect_to sub_place_url(@sub_place), notice: 'Sub place was successfully updated.' }
         format.json { render :show, status: :ok, location: @sub_place }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class SubPlacesController < ApplicationController
     @sub_place.destroy
 
     respond_to do |format|
-      format.html { redirect_to sub_places_url, notice: "Sub place was successfully destroyed." }
+      format.html { redirect_to sub_places_url, notice: 'Sub place was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_sub_place
-      @sub_place = SubPlace.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def sub_place_params
-      params.require(:sub_place).permit(:name, :place_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_sub_place
+    @sub_place = SubPlace.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def sub_place_params
+    params.require(:sub_place).permit(:name, :place_id)
+  end
 end
