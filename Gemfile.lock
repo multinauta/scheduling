@@ -125,6 +125,10 @@ GEM
       responders
       warden (~> 1.2.3)
     digest (3.1.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.5)
@@ -173,10 +177,6 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.8)
       mini_portile2 (~> 2.8.0)
-      racc (~> 1.4)
-    nokogiri (1.13.8-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.13.8-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.2)
@@ -294,6 +294,8 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.8, >= 4.8.1)
+  dotenv
+  dotenv-rails
   importmap-rails
   jbuilder
   pg (~> 1.4, >= 1.4.2)

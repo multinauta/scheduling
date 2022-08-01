@@ -27,6 +27,12 @@ class SchedulesController < ApplicationController
 
     respond_to do |format|
       if @schedule.save
+        NotificationSpecialistSchedulingJob.perform_now(
+          datetime: params[:datetime],
+          place_id: params[:place_id],
+          user_id: params[:user_id],
+          current_user_id: current_user.id
+        )
         format.html { redirect_to schedule_url(@schedule), notice: 'Schedule was successfully created.' }
         format.json { render :show, status: :created, location: @schedule }
       else
