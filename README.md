@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Para acceder a la plataformar, favor acceder a la siguiente URL: http://scheduling.alvaro-tapia.cl/
 
-Things you may want to cover:
+Pasos para la prueba
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Registrarse
+2. Acceder a la plataforma
+3. Realizar agendamiento con el link en el lado izquierdo "Agendamiento".
+4. Confirmar recepción de correo, luego de realizar el paso 3.
