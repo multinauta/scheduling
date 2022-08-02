@@ -71,6 +71,8 @@ Rails.application.configure do
 
   #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  config.active_storage.service = :digitalocean
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
 
@@ -82,7 +84,7 @@ Rails.application.configure do
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :user_name            => ENV['GMAIL_USERNAME'],
-    :password             => 'tmfjecmnmdzswulw',
+    :password             => ENV['GMAIL_PASSWORD'],
     :authentication       => "plain",
     :enable_starttls_auto => true
   }
